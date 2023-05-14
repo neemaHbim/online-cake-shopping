@@ -1,0 +1,143 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Cakes | Cake Backer</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com"/>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;" rel="stylesheet"/>
+    <link rel="stylesheet" href="../Dash/assets/css/bootstrap.css"/>
+
+    <link rel="stylesheet" href="../Dash/assets/vendors/perfect-scrollbar/perfect-scrollbar.css"/>
+    <link rel="stylesheet" href="../Dash/assets/vendors/bootstrap-icons/bootstrap-icons.css"/>
+    <link rel="stylesheet" href="../Dash/assets/css/apps.css"/>
+    <link rel="shortcut icon" href="../Dash/assets/images/favicon.svg" type="image/x-icon"/>
+
+    <style>
+            .mm{
+                height: 60px;
+                width: 100%;
+                /*background-color: white;*/
+
+
+            }
+        </style>
+</head>
+<body>
+<div class="mm" xmlns:sec="http://www.w3.org/1999/xhtml">
+    <div class="d-flex align-right" style="position: absolute; right: 2%; margin-top: 10px;">
+        <div class="avatar avatar-xl">
+            <img src="../Dash/assets/images/faces/9.jpg" alt="Face 1"/>
+        </div>
+        <div class="ms-3 name">
+            <h5 class="font-bold">Admin</h5>
+            <form>
+                <a  class="btn btn-primary btn-sm" href="../login" >Log Out</a>
+
+            </form>
+        </div>
+    </div>
+</div>
+    <div id="app">
+        <div id="sidebar" class="active">
+            <div class="sidebar-wrapper active">
+
+
+                <div class="logo" style="padding: 30px 0 0 100px">
+                    <a href="index.xhtml"><img src="../Landing/image/logo.png" alt="Logo" srcset="" width="80"/></a>
+                </div>
+                <div class="toggler">
+                    <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
+                </div>
+
+
+                <div th:replace="Dashboard/shared/sidebar"></div>
+                <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
+            </div>
+        </div>
+        <div id="main">
+            <header class="mb-3">
+                <a href="#" class="burger-btn d-block d-xl-none">
+                    <i class="bi bi-justify fs-3"></i>
+                </a>
+            </header>
+
+            <div class="page-heading">
+                <div class="page-title">
+                    <div class="row">
+                        <div class="col-12 col-md-6 order-md-1 order-last">
+                            <h3>Cakes</h3>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- // Basic multiple Column Form section start -->
+                <section id="multiple-column-form">
+                    <div class="row match-height">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title">Add Cake</h4>
+                                </div>
+                                <div class="card-content">
+                                    <div class="card-body">
+                                        <form class="form" method="post" th:action="@{/cake/registration}" th:object="${cake}" >
+
+                                            <div class="row">
+                                                <div class="col-md-12 col-12">
+                                                    <div class="form-group">
+                                                        <label >Name</label>
+                                                        <input type="text" class="form-control" required placeholder="Cake Name" th:field="*{name}"/>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12 col-12">
+                                                    <div class="form-group">
+                                                        <label >Price</label>
+                                                        <input type="number" class="form-control" required placeholder="Price" th:field="*{price}"/>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12 col-12">
+                                                    <div class="form-group">
+                                                        <label>Description</label>
+                                                        <input type="text" class="form-control" required placeholder="Description" th:field="*{description}"/>
+                                                    </div>
+                                                </div>
+
+
+
+
+                                                <div class="col-12 d-flex justify-content-end">
+                                                    <input type="submit" value="Submit" class="btn btn-primary me-1 mb-1"/>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- // Basic multiple Column Form section end -->
+            </div>
+            <br/><br/><br/><br/>
+            <footer>
+                <div class="footer clearfix mb-0 text-muted">
+
+                    <center>
+                        <p>2023 &copy; | Alright Reserved</p>
+                    </center>
+
+
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="../Dash/assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="../Dash/assets/js/bootstrap.bundle.min.js"></script>
+
+    <script src="../Dash/assets/js/mazer.js"></script>
+</body>
+</html>
+

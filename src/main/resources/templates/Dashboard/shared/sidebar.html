@@ -1,0 +1,39 @@
+<div class="sidebar-menu" xmlns:sec="http://www.w3.org/1999/xhtml">
+    <ul class="menu">
+        <li class="sidebar-title">Menu</li>
+
+        <li
+                class="sidebar-item active">
+            <a href="/dashboard" class='sidebar-link'>
+                <i class="bi bi-grid-fill"></i>
+                <span>Dashboard</span>
+            </a>
+        </li>
+
+
+        <li sec:authorize="hasAuthority('ROLE_ADMIN')"
+                class="sidebar-item  ">
+            <a href="/orders/list" class='sidebar-link'>
+                <i class="bi bi-bookmarks"></i>
+                <span>Orders</span>
+            </a>
+        </li>
+
+        <li sec:authorize="hasAuthority('ROLE_ADMIN')"
+                class="sidebar-item  ">
+            <a href="/clients/list" class='sidebar-link'>
+                <i class="bi bi-person"></i>
+                <span>Clients</span>
+            </a>
+        </li>
+
+        <li sec:authorize="hasAuthority('ROLE_ADMIN')"
+            class="sidebar-item  ">
+            <a href="/uploads/files" class='sidebar-link'>
+                <i class="bi bi-file"></i>
+                <span>Files Upload</span>
+            </a>
+        </li>
+
+    </ul>
+</div>
